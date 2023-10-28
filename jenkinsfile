@@ -1,12 +1,16 @@
 pipeline {
     agent any
-
     stages {
-        stage('Étape exemple') {
+        stage('Etape 1') {
             steps {
-                // Ajoutez vos étapes ici
-                echo 'Bonjour le Monde'
+                echo 'Première étape exécutée'
             }
         }
+        stage('Etape 2') {
+            steps {
+                echo 'Deuxième étape exécutée'
+            }
+        }
+        // Ajoutez plus d'étapes si nécessaire
     }
 }
