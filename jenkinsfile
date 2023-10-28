@@ -22,6 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Déploiement du projet"
+                sh "node app.js"
                 
             }
         }
