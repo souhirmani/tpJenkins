@@ -4,23 +4,23 @@ pipeline {
         pollSCM('*/5 * * * *')
     } 
     
-    stages {
-        stage('Checkout') {
-            steps {
+    Stages {
+        Stage('Checkout') {
+            Steps {
                 echo "Récupération du code source"
                 checkout scm
             }
         }
         
-        stage('Build') {
-            steps {
+        Stage('Build') {
+            Steps {
                 echo "Build du projet"
                 
             }
         }
         
-        stage('Deploy') {
-            steps {
+        Stage('Deploy') {
+            Steps {
                 echo "Déploiement du projet"
                 
             }
