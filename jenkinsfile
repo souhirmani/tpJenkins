@@ -1,5 +1,5 @@
 pipeline {
-    agent any {
+    agent any 
         triggers {
             pollSCM('*/5 * * * *') //Vérifier toutes les 5 minutes
         }
@@ -21,9 +21,9 @@ pipeline {
             stage('Deploy') {
                 steps {
                     echo "Déploiement du projet"
+                    sh "node app.js"
                     //Ajoutez les commandes de déploiement ici
                 }
             }
-        }
     }
 }
