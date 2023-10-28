@@ -1,16 +1,32 @@
 pipeline {
     agent any
+    triggers {
+        pollSCM('*/5 * * * *')
+    } 
+    
     stages {
-        stage('Etape 1') {
+        stage('Checkout') {
             steps {
-                echo 'Première étape exécutée'
+                echo "Récupération du code source"
+                checkout scm
             }
         }
-        stage('Etape 2') {
+        
+        stage('Build') {
             steps {
-                echo 'Deuxième étape exécutée'
+                echo "Build du projet"
+                
             }
         }
-        // Ajoutez plus d'étapes si nécessaire
+        
+        stage('Deploy') {
+            steps {
+                echo "Déploiement du projet"
+                
+            }
+        }
+            
     }
+        
+        
 }
